@@ -65,7 +65,8 @@ jobs:
 
   QA:
     runs-on: windows-latest
-    needs: build
+    needs: Dev
+    if: success()
     environment:
       name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
