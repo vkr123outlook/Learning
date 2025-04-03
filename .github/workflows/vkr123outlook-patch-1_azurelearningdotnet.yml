@@ -4,9 +4,6 @@
 name: Build and deploy ASP.Net Core app to Azure Web App - AzureLearningDotNet
 
 on:
-  push:
-    branches:
-      - vkr123outlook-patch-1
   workflow_dispatch:
 
 jobs:
