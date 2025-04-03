@@ -1,10 +1,7 @@
 name: .NET
 
 on:
-  push:
-    branches: [ "vkr123outlook-patch-1" ]
-  pull_request:
-    branches: [ "vkr123outlook-patch-1" ]
+  workflow_dispatch:
 
 jobs:
   build:
