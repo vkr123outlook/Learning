@@ -62,3 +62,34 @@ jobs:
           app-name: 'AzureLearningGitQA'
           slot-name: 'Production'
           package: .
+
+  QA:
+    runs-on: windows-latest
+    needs: build
+    environment:
+      name: 'Production'
+      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+    permissions:
+      id-token: write #This is required for requesting the JWT
+      contents: read #This is required for actions/checkout
+
+    steps:
+      - name: Download artifact from build job
+        uses: actions/download-artifact@v4
+        with:
+          name: .net-app
+      
+      - name: Login to Azure
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_3E3CF277F4794B38BAAF994DA52549D5 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_F4398E432F9F40A89F7E1C5F2C1C2E63 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_480350BFA7DC4E4384BC2D4B97783F5A }}
+
+      - name: Deploy to Azure Web App
+        id: deploy-to-webapp
+        uses: azure/webapps-deploy@v3
+        with:
+          app-name: 'AzureLearningGitQA'
+          slot-name: 'Production'
+          package: .
