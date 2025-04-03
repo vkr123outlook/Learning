@@ -1,6 +1,3 @@
-# This workflow will build a .NET project
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
-
 name: .NET
 
 on:
@@ -24,20 +21,19 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore
-    - name: Publish
-      run: dotnet publish -c Release -o ./publish  # Ensure the publish folder is created
     - name: Create build artifact
       id: build-artifact
       run: |
-        # Check if the publish folder has content and create a zip file
-        if [ -d "./publish" ] && [ "$(ls -A ./publish)" ]; then
+        # Check if the build output folder exists and create a zip file
+        if [ -d "./bin/Release/net8.0" ] && [ "$(ls -A ./bin/Release/net8.0)" ]; then
           mkdir -p ./build-artifacts
-          cp -r ./publish/* ./build-artifacts/
+          cp -r ./bin/Release/net8.0/* ./build-artifacts/
           cd ./build-artifacts
-          zip -r ../artifact.zip .  # Create a zip file with all published files
+          zip -r ../artifact.zip .  # Create a zip file with all build files
           echo "::set-output name=artifact-path::$(pwd)/../artifact.zip"  # Set the artifact path for the next job
         else
-          echo "Error: The publish folder is empty or not created."
+          echo "Error: The build folder is empty or not created."
           exit 1
         fi
-
+    - name: Publish
+      run: dotnet publish -c Release -o ./publish  # Ensure the publish folder is created
