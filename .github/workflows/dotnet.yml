@@ -5,9 +5,9 @@ name: .NET
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "vkr123outlook-patch-1" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "vkr123outlook-patch-1" ]
 
 jobs:
   build:
