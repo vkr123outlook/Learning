@@ -24,3 +24,11 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore
+    - name: Create build artifact
+      id: build-artifact
+      run: |
+        # Assuming your build output is in a dist/ folder, modify as needed
+        mkdir -p ./build
+        cp -r ./dist/* ./build/
+        echo "::set-output name=artifact-path::$(pwd)/build"  # Set artifact path as output
+
