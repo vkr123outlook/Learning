@@ -31,12 +31,13 @@ jobs:
         with:
           name: .net-app
           path: ${{env.DOTNET_ROOT}}/myapp
+          
       # Debug: Echo to print the contents of the build directory
       - name: Debug - Print the contents of the build directory
         run: |
           echo "Contents of the build output directory:"
-          ls -alh "${{env.DOTNET_ROOT}}/myapp"  # List the contents of the publish directory
-          ls -alh actions/upload-artifact@v4  # List the contents of the upload artifact
+          dir "${{env.DOTNET_ROOT}}\\myapp" # List the contents of the publish directory
+          dir actions/upload-artifact@v4  # List the contents of the upload artifact
   Dev:
     runs-on: windows-latest
     needs: build
