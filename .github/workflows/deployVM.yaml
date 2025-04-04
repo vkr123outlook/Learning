@@ -37,7 +37,6 @@ jobs:
         run: |
           echo "Contents of the build output directory:"
           dir "${{env.DOTNET_ROOT}}\\myapp" # List the contents of the publish directory
-          dir actions/upload-artifact@v4  # List the contents of the upload artifact
   Dev:
     runs-on: windows-latest
     needs: build
