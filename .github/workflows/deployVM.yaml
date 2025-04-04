@@ -86,7 +86,7 @@ jobs:
       - name: Write SSH private key to file
         run: |
           # Write the SSH private key to a temporary file
-          echo ${{ secrets.AZURE_VM_SSH_PRIVATE_KEY }}
+          echo "${{ secrets.AZURE_VM_SSH_PRIVATE_KEY }}"
           echo "MIIG5AIBAAKCAYEAt9sUNQOJ/zq5qYPbhP2c9RZz/aykFZ1URIHwycWamR5JRgkZ
                 U0u+55tVsjQnKZdKt+5q2KvtPDv9ywQ5fXnxhPlNSz6+I3GvTgelitFy1xAZmVxB
                 u/iWRKP0fT5iNDTvpxod8UXepm/yDBV7eJg076MR4pTfOxuHR/HuCZX7qzai9LAJ
