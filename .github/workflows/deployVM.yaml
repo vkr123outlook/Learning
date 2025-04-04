@@ -126,7 +126,7 @@ jobs:
           $VM_IP: 172.174.226.164
           $VM_USER: azureuser
           # Copy the files from the GitHub runner to the Azure VM using SSH private key
-          scp -o StrictHostKeyChecking=no -i private_key.pem -r ./publish/* $VM_USER@$VM_IP:/home/$VM_USER/myapp
+          scp -o StrictHostKeyChecking=no -i private_key.pem -r ./downloaded-artifact/* $VM_USER@$VM_IP:/home/$VM_USER/myapp
 
       - name: SSH into Azure VM and restart app
         run: |
