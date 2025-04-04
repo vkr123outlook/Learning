@@ -131,7 +131,7 @@ jobs:
           $VM_IP: 172.174.226.164
           $VM_USER: azureuser
           # Copy the files from the GitHub runner to the Azure VM using SSH private key
-          scp -o StrictHostKeyChecking=no -i private_key.pem -r C:\Program Files\dotnet\myapp $VM_USER@$VM_IP:/home/$VM_USER/myapp
+          scp -o StrictHostKeyChecking=no -i private_key.pem -r C:\Program Files\dotnet\myapp azureuser@172.174.226.164:/home/azureuser/myapp
 
       - name: SSH into Azure VM and restart app
         run: |
@@ -139,9 +139,9 @@ jobs:
           $VM_USER=azureuser
 
           # SSH into the Azure VM and restart the app or service
-          ssh -o StrictHostKeyChecking=no -i private_key.pem $VM_USER@$VM_IP <<EOF
+          ssh -o StrictHostKeyChecking=no -i private_key.pem azureuser@172.174.226.164 <<EOF
             # Navigate to the app directory
-            cd /home/$VM_USER/myapp
+            cd /home/azureuser/myapp
 
             # If you're using systemd, restart the service
             sudo systemctl restart myapp.service  # Ensure that the service is defined on the VM
