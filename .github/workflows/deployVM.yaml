@@ -81,17 +81,89 @@ jobs:
       - name: Copy files to Azure VM
         run: |
           # Define variables
-          VM_IP: 172.174.226.164
-          VM_USER: azureuser
-          SSH_PRIVATE_KEY: ${{ secrets.AZURE_VM_SSH_PRIVATE_KEY }}
+          $VM_IP: 172.174.226.164
+          $VM_USER: azureuser
+          $SSH_PRIVATE_KEY: MIIG5AIBAAKCAYEAt9sUNQOJ/zq5qYPbhP2c9RZz/aykFZ1URIHwycWamR5JRgkZ
+                            U0u+55tVsjQnKZdKt+5q2KvtPDv9ywQ5fXnxhPlNSz6+I3GvTgelitFy1xAZmVxB
+                            u/iWRKP0fT5iNDTvpxod8UXepm/yDBV7eJg076MR4pTfOxuHR/HuCZX7qzai9LAJ
+                            ftMJbazffWH2vbfAsPNBIGc8lVCIpRsBvHTljXRehl0qIwMKeN1hRnnVAsYljTWS
+                            mr9fkn107oD+wlMYQmGb0QQny89wHtyUYroyhr9xqj1l8GJ7fsp5qwUKkrZ+dImb
+                            VU7h7pZdoJFU0ARSXAfAILOn30sGjBMZ5S+r0mxHygnzIw7ZGb+WIT8Pkc/k1M2r
+                            54B0T/chgPC8cJ+RUD3W6hhi49UzDrPTttYD+LbwvubM3z5BYtrL4r7sIQtfft6M
+                            dZcnaA64EorOKX7+q+DeqX0mOXYudFG1uyZUHe94Ok/OPAsSgvdd1WUxSu5dKefl
+                            Uuhpjn1Qp4nt8TM9AgMBAAECggGATJ1gqE7XPKKOJ9OosJy2wXMf1sAQiGlNalbz
+                            rkFIETKLukGkag+QeBdE+MO+5hgDrO4PXEcYzxb4xZb3FhCw0obI7Ogyd7ayJMQO
+                            +fAZ+QDeigfl5JzMkcH46hALAFJm462AeMBy7cyMgviYwUI8HPhJRbBf7dOk5hgs
+                            55W2kDxuX6TT8COlNCzr3OXr2lcuVw6nPweGOXqb1qGQcaYM2ot5sGg2XOyxenhW
+                            RvYSC9viXhvLAe1puDPLfHAIuZXCOqvjQnQpFrl4/miKHv+/AO02og90dXii+HfH
+                            sesCcjY+xX2SScVQMMl93S4UY2ky1gPtdI+1xFsUd7q7VqLl7u0642lVxP2O5f1T
+                            7J9jkF6jIcfPziHSXQBjM8QctinLt0ogwpk3uUDzfVgC6shwtiRROWofTX88Iz4a
+                            O1S39pBM/AuxOUwOuqzuE7/xRvb5GlYb1nynVD0iJB8SgJ4Jn/FkMbFYsmZUeApE
+                            g27EEhEeRjP3dNQqfYXeP/On2RKJAoHBAMZLi1BlIVzwntJpK5+3kD01O9UscBt3
+                            KorNzczjGJ6XXEpdPuejhgp7gWO1TfJW5RasjC7dsZM8dKDqIAMZegPSumcXacjH
+                            9rj00il2qo7jSkAp09rNUHJhGiPibGVGHqkbbhnVFRzaRPZ0dx+M/Jjz3rX00hrr
+                            tNogEOsqD4A6YGE212ib05BIqb2ovEW08Ms2HObjxqVsUSSmIL9cKndBe3ybHIDI
+                            J/fo5cjP9/TQlKfCwqYjevx6d2yPafjDiwKBwQDtW9gWXVZiP3b0XBUFInx8ToDB
+                            RJFfb471zGnI7B32NwJCNGMb1t9sjcJI28mCat7CGKwYG5G713GqObn/Mx3vpCCz
+                            NErdDGlFqXhqQ0PsiZ7etBCJeCLro8mlBBwEUHM5T9DgEUNeLJX1fnH+T1n9YhNj
+                            JYdvPYR31eHHunnybDaMsQNQKVpXaUkGN65ZhcY/w0b5znf170uhNh8oN3p0M4aj
+                            mDZ8hZzGMtpiOq1bsSfiZL/njABiM3t0vbzAHVcCgcEAk7rKQo3lSjF1kXqK5oXC
+                            LueO+OUPbFbeWeSzkxYJTHWlaz2G1NntzbdvkRIMzSPRro/ELFI7rl6W4R8r1ENR
+                            tLF078Lwq4XWGLtEK2Hd9W/97El9LQBTE7Ol3uAcM2MHCqOF5jbqcMFoKVhhOx81
+                            PNpKrLKFKUs7RFopYJnITJaxIRvTZXraJh8MXmDsSt5fmnVpGNbPMoS8+xnNQeNv
+                            O8OMNSv2EzeLF1Xqgy31I+2VIlql21KJmLnAaR97Krq7AoHBAOFZWm3ZTeNXV8um
+                            BPrsA/5M1ecn/1D5bGQnH6P3sHaLQWSzsgjDVzoL2JItwUJFzpm+rNzyh8ksQakY
+                            x2LoGBrl23noQs9dMjFGNaHFnR5chm3vzOeHHLhVt2Mo5KSf8NVP1wJ0wV4OvIzn
+                            8Lg+hDSRwdBW2B+f6z2O3Z4viAnF/YBTqs6XhEMLHZ5+jNRHsrHk52TSRohDGa3D
+                            4Y7gJS1fogt9vvU4MWDm9Plftikgp7pEZwIhpFeXgzWR0jsfXwKBwDniPOwt7Cqg
+                            HIzH4/ZWXcy8f37jbZEp/7hVdOmxbnYy9+6bY+5wcjOokixSYrcqCPfclQqq+f35
+                            wUAd8GPttbUT1JyEL05kgmj/TIsIeS9KDIfYshslAuaicUA5Ln0AoZA3yRAqhg0B
+                            BGo8WQsWMs1stSVBSNftd8NrdwGILGK2e34ApOZ4O3Nkf51RoPEZFow4lTuzEWOP
+                            tJw4Sj6mthkXIFlnA/s5f0BQ+4FW0QOvviUOzYP4tLiOM9j/PvzyMw==
           # Copy the files from the GitHub runner to the Azure VM using SSH private key
           scp -o StrictHostKeyChecking=no -i $SSH_PRIVATE_KEY -r ./publish/* $VM_USER@$VM_IP:/home/$VM_USER/myapp
 
       - name: SSH into Azure VM and restart app
         run: |
-          VM_IP=172.174.226.164
-          VM_USER=azureuser
-          SSH_PRIVATE_KEY=${{ secrets.AZURE_VM_SSH_PRIVATE_KEY }}
+          $VM_IP=172.174.226.164
+          $VM_USER=azureuser
+          $SSH_PRIVATE_KEY= MIIG5AIBAAKCAYEAt9sUNQOJ/zq5qYPbhP2c9RZz/aykFZ1URIHwycWamR5JRgkZ
+                            U0u+55tVsjQnKZdKt+5q2KvtPDv9ywQ5fXnxhPlNSz6+I3GvTgelitFy1xAZmVxB
+                            u/iWRKP0fT5iNDTvpxod8UXepm/yDBV7eJg076MR4pTfOxuHR/HuCZX7qzai9LAJ
+                            ftMJbazffWH2vbfAsPNBIGc8lVCIpRsBvHTljXRehl0qIwMKeN1hRnnVAsYljTWS
+                            mr9fkn107oD+wlMYQmGb0QQny89wHtyUYroyhr9xqj1l8GJ7fsp5qwUKkrZ+dImb
+                            VU7h7pZdoJFU0ARSXAfAILOn30sGjBMZ5S+r0mxHygnzIw7ZGb+WIT8Pkc/k1M2r
+                            54B0T/chgPC8cJ+RUD3W6hhi49UzDrPTttYD+LbwvubM3z5BYtrL4r7sIQtfft6M
+                            dZcnaA64EorOKX7+q+DeqX0mOXYudFG1uyZUHe94Ok/OPAsSgvdd1WUxSu5dKefl
+                            Uuhpjn1Qp4nt8TM9AgMBAAECggGATJ1gqE7XPKKOJ9OosJy2wXMf1sAQiGlNalbz
+                            rkFIETKLukGkag+QeBdE+MO+5hgDrO4PXEcYzxb4xZb3FhCw0obI7Ogyd7ayJMQO
+                            +fAZ+QDeigfl5JzMkcH46hALAFJm462AeMBy7cyMgviYwUI8HPhJRbBf7dOk5hgs
+                            55W2kDxuX6TT8COlNCzr3OXr2lcuVw6nPweGOXqb1qGQcaYM2ot5sGg2XOyxenhW
+                            RvYSC9viXhvLAe1puDPLfHAIuZXCOqvjQnQpFrl4/miKHv+/AO02og90dXii+HfH
+                            sesCcjY+xX2SScVQMMl93S4UY2ky1gPtdI+1xFsUd7q7VqLl7u0642lVxP2O5f1T
+                            7J9jkF6jIcfPziHSXQBjM8QctinLt0ogwpk3uUDzfVgC6shwtiRROWofTX88Iz4a
+                            O1S39pBM/AuxOUwOuqzuE7/xRvb5GlYb1nynVD0iJB8SgJ4Jn/FkMbFYsmZUeApE
+                            g27EEhEeRjP3dNQqfYXeP/On2RKJAoHBAMZLi1BlIVzwntJpK5+3kD01O9UscBt3
+                            KorNzczjGJ6XXEpdPuejhgp7gWO1TfJW5RasjC7dsZM8dKDqIAMZegPSumcXacjH
+                            9rj00il2qo7jSkAp09rNUHJhGiPibGVGHqkbbhnVFRzaRPZ0dx+M/Jjz3rX00hrr
+                            tNogEOsqD4A6YGE212ib05BIqb2ovEW08Ms2HObjxqVsUSSmIL9cKndBe3ybHIDI
+                            J/fo5cjP9/TQlKfCwqYjevx6d2yPafjDiwKBwQDtW9gWXVZiP3b0XBUFInx8ToDB
+                            RJFfb471zGnI7B32NwJCNGMb1t9sjcJI28mCat7CGKwYG5G713GqObn/Mx3vpCCz
+                            NErdDGlFqXhqQ0PsiZ7etBCJeCLro8mlBBwEUHM5T9DgEUNeLJX1fnH+T1n9YhNj
+                            JYdvPYR31eHHunnybDaMsQNQKVpXaUkGN65ZhcY/w0b5znf170uhNh8oN3p0M4aj
+                            mDZ8hZzGMtpiOq1bsSfiZL/njABiM3t0vbzAHVcCgcEAk7rKQo3lSjF1kXqK5oXC
+                            LueO+OUPbFbeWeSzkxYJTHWlaz2G1NntzbdvkRIMzSPRro/ELFI7rl6W4R8r1ENR
+                            tLF078Lwq4XWGLtEK2Hd9W/97El9LQBTE7Ol3uAcM2MHCqOF5jbqcMFoKVhhOx81
+                            PNpKrLKFKUs7RFopYJnITJaxIRvTZXraJh8MXmDsSt5fmnVpGNbPMoS8+xnNQeNv
+                            O8OMNSv2EzeLF1Xqgy31I+2VIlql21KJmLnAaR97Krq7AoHBAOFZWm3ZTeNXV8um
+                            BPrsA/5M1ecn/1D5bGQnH6P3sHaLQWSzsgjDVzoL2JItwUJFzpm+rNzyh8ksQakY
+                            x2LoGBrl23noQs9dMjFGNaHFnR5chm3vzOeHHLhVt2Mo5KSf8NVP1wJ0wV4OvIzn
+                            8Lg+hDSRwdBW2B+f6z2O3Z4viAnF/YBTqs6XhEMLHZ5+jNRHsrHk52TSRohDGa3D
+                            4Y7gJS1fogt9vvU4MWDm9Plftikgp7pEZwIhpFeXgzWR0jsfXwKBwDniPOwt7Cqg
+                            HIzH4/ZWXcy8f37jbZEp/7hVdOmxbnYy9+6bY+5wcjOokixSYrcqCPfclQqq+f35
+                            wUAd8GPttbUT1JyEL05kgmj/TIsIeS9KDIfYshslAuaicUA5Ln0AoZA3yRAqhg0B
+                            BGo8WQsWMs1stSVBSNftd8NrdwGILGK2e34ApOZ4O3Nkf51RoPEZFow4lTuzEWOP
+                            tJw4Sj6mthkXIFlnA/s5f0BQ+4FW0QOvviUOzYP4tLiOM9j/PvzyMw==
 
           # SSH into the Azure VM and restart the app or service
           ssh -o StrictHostKeyChecking=no -i $SSH_PRIVATE_KEY $VM_USER@$VM_IP <<EOF
